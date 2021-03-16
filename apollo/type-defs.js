@@ -1,6 +1,13 @@
-import { gql } from '@apollo/client'
+import { gql } from "@apollo/client";
 
 export const typeDefs = gql`
+  type Article {
+    id: String!
+    title: String!
+    url: String!
+    imageUrl: String
+  }
+
   type User {
     id: ID!
     name: String!
@@ -9,5 +16,6 @@ export const typeDefs = gql`
 
   type Query {
     viewer: User
+    articles: [Article!]!
   }
-`
+`;
